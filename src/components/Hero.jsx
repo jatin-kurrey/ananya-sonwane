@@ -1,7 +1,7 @@
 import React from 'react';
-import { Sparkles, Palette, Download, Heart } from 'lucide-react';
+import { Palette, Download, Mail } from 'lucide-react';
 
-export default function Hero({ onOpenClubModal, onOpenResume }) {
+export default function Hero({ onOpenResume }) {
   return (
     <section
       id="hero"
@@ -149,20 +149,16 @@ export default function Hero({ onOpenClubModal, onOpenResume }) {
           }}
         >
           <button onClick={onOpenResume} className="btn-primary" style={{ padding: '12px 28px', fontSize: '0.9rem' }}>
-            <Download size={18} /> Download High Quality PDF
+            <Download size={18} /> Download Resume PDF
           </button>
 
           <a href="#creative" className="btn-secondary" style={{ padding: '12px 28px', fontSize: '0.9rem' }}>
             <Palette size={18} /> Explore Creative Journey
           </a>
 
-          <button
-            onClick={onOpenClubModal}
-            className="btn-secondary"
-            style={{ padding: '12px 28px', fontSize: '0.9rem' }}
-          >
-            <Sparkles size={18} /> Join Club
-          </button>
+          <a href="#contact" className="btn-secondary" style={{ padding: '12px 28px', fontSize: '0.9rem' }}>
+            <Mail size={18} /> Contact & Collaborate
+          </a>
         </div>
       </div>
     </section>

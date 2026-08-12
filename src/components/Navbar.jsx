@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun, Download, Sparkles, Menu, X } from 'lucide-react';
+import { Moon, Sun, Download, Mail, Menu, X } from 'lucide-react';
 
-export default function Navbar({ onOpenResume, onOpenClubModal, isDark, toggleTheme }) {
+export default function Navbar({ onOpenResume, isDark, toggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -70,6 +70,7 @@ export default function Navbar({ onOpenResume, onOpenClubModal, isDark, toggleTh
           <a href="#leadership" style={navLinkStyle(scrolled, isDark)}>Leadership</a>
           <a href="#achievements" style={navLinkStyle(scrolled, isDark)}>Achievements</a>
           <a href="#qualities" style={navLinkStyle(scrolled, isDark)}>Personal Qualities</a>
+          <a href="#contact" style={navLinkStyle(scrolled, isDark)}>Contact</a>
         </nav>
 
         {/* Right Action Buttons */}
@@ -141,52 +142,12 @@ export default function Navbar({ onOpenResume, onOpenClubModal, isDark, toggleTh
             boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
           }}
         >
-          <a
-            href="#profile"
-            onClick={() => setMobileMenuOpen(false)}
-            style={mobileNavLinkStyle}
-          >
-            Profile
-          </a>
-          <a
-            href="#creative"
-            onClick={() => setMobileMenuOpen(false)}
-            style={mobileNavLinkStyle}
-          >
-            Creative Journey
-          </a>
-          <a
-            href="#leadership"
-            onClick={() => setMobileMenuOpen(false)}
-            style={mobileNavLinkStyle}
-          >
-            Leadership
-          </a>
-          <a
-            href="#achievements"
-            onClick={() => setMobileMenuOpen(false)}
-            style={mobileNavLinkStyle}
-          >
-            Achievements
-          </a>
-          <a
-            href="#qualities"
-            onClick={() => setMobileMenuOpen(false)}
-            style={mobileNavLinkStyle}
-          >
-            Personal Qualities
-          </a>
-
-          <button
-            onClick={() => {
-              setMobileMenuOpen(false);
-              onOpenClubModal();
-            }}
-            className="btn-secondary"
-            style={{ width: '100%', justifyContent: 'center', marginTop: '6px' }}
-          >
-            <Sparkles size={16} /> Join Club
-          </button>
+          <a href="#profile" onClick={() => setMobileMenuOpen(false)} style={mobileNavLinkStyle}>Profile</a>
+          <a href="#creative" onClick={() => setMobileMenuOpen(false)} style={mobileNavLinkStyle}>Creative Journey</a>
+          <a href="#leadership" onClick={() => setMobileMenuOpen(false)} style={mobileNavLinkStyle}>Leadership</a>
+          <a href="#achievements" onClick={() => setMobileMenuOpen(false)} style={mobileNavLinkStyle}>Achievements</a>
+          <a href="#qualities" onClick={() => setMobileMenuOpen(false)} style={mobileNavLinkStyle}>Personal Qualities</a>
+          <a href="#contact" onClick={() => setMobileMenuOpen(false)} style={mobileNavLinkStyle}>Contact Me</a>
         </div>
       )}
     </>

@@ -6,13 +6,12 @@ import CreativeJourney from './components/CreativeJourney';
 import Leadership from './components/Leadership';
 import Achievements from './components/Achievements';
 import PersonalQualities from './components/PersonalQualities';
+import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
-import ClubJoinModal from './components/ClubJoinModal';
 import ResumeModal from './components/ResumeModal';
 
 export default function App() {
   const [isDark, setIsDark] = useState(false);
-  const [isClubModalOpen, setIsClubModalOpen] = useState(false);
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
 
   const toggleTheme = () => {
@@ -32,7 +31,6 @@ export default function App() {
       {/* Interactive Website Header Navigation */}
       <Navbar
         onOpenResume={() => setIsResumeModalOpen(true)}
-        onOpenClubModal={() => setIsClubModalOpen(true)}
         isDark={isDark}
         toggleTheme={toggleTheme}
       />
@@ -40,7 +38,6 @@ export default function App() {
       {/* Main Interactive Portfolio Sections */}
       <main>
         <Hero
-          onOpenClubModal={() => setIsClubModalOpen(true)}
           onOpenResume={() => setIsResumeModalOpen(true)}
         />
         <Profile />
@@ -48,16 +45,13 @@ export default function App() {
         <Leadership />
         <Achievements />
         <PersonalQualities />
+        <ContactSection />
       </main>
 
       {/* Interactive Footer */}
       <Footer />
 
-      {/* Modals */}
-      <ClubJoinModal
-        isOpen={isClubModalOpen}
-        onClose={() => setIsClubModalOpen(false)}
-      />
+      {/* Resume Modal */}
       <ResumeModal
         isOpen={isResumeModalOpen}
         onClose={() => setIsResumeModalOpen(false)}
