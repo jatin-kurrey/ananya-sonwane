@@ -176,7 +176,7 @@ body {
 
   .glass-card {
     border-radius: 16px;
-    padding: 24px 18px !important;
+    padding: 22px 18px !important;
   }
 
   .btn-primary, .btn-secondary {
@@ -184,37 +184,15 @@ body {
     justify-content: center;
   }
 
-  /* Sheet container responsiveness on mobile */
-  .a4-sheet {
-    transform: scale(0.9);
-    transform-origin: top center;
-  }
-}
-
-@media (max-width: 480px) {
-  .a4-sheet {
-    transform: scale(0.72);
-    transform-origin: top center;
-  }
-}
-
-/* PRINT STYLES */
-@media print {
-  header, footer, nav, button, .nav-bar, #hero, #profile, #creative, #leadership, #achievements, #qualities {
+  .timeline-line-desktop, .timeline-center-node {
     display: none !important;
   }
 
-  html, body {
-    background: white !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 210mm !important;
-    height: 297mm !important;
-    overflow: hidden !important;
+  .timeline-row {
+    justify-content: center !important;
   }
 
-  @page {
-    size: A4 portrait;
-    margin: 0;
+  .timeline-row .glass-card {
+    width: 100% !important;
   }
 }

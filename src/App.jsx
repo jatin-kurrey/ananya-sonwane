@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Profile from './components/Profile';
+import InteractiveTimeline from './components/InteractiveTimeline';
 import CreativeJourney from './components/CreativeJourney';
 import Leadership from './components/Leadership';
 import Achievements from './components/Achievements';
@@ -28,19 +29,18 @@ export default function App() {
 
   return (
     <div className="app">
-      {/* Interactive Website Header Navigation */}
+      {/* Header Navigation */}
       <Navbar
         onOpenResume={() => setIsResumeModalOpen(true)}
         isDark={isDark}
         toggleTheme={toggleTheme}
       />
 
-      {/* Main Interactive Portfolio Sections */}
+      {/* Main Portfolio Content */}
       <main>
-        <Hero
-          onOpenResume={() => setIsResumeModalOpen(true)}
-        />
+        <Hero onOpenResume={() => setIsResumeModalOpen(true)} />
         <Profile />
+        <InteractiveTimeline />
         <CreativeJourney />
         <Leadership />
         <Achievements />
@@ -48,7 +48,7 @@ export default function App() {
         <ContactSection />
       </main>
 
-      {/* Interactive Footer */}
+      {/* Footer */}
       <Footer />
 
       {/* Resume Modal */}

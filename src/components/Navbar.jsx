@@ -66,6 +66,7 @@ export default function Navbar({ onOpenResume, isDark, toggleTheme }) {
           className="nav-links-desktop"
         >
           <a href="#profile" style={navLinkStyle(scrolled, isDark)}>Profile</a>
+          <a href="#journey-timeline" style={navLinkStyle(scrolled, isDark)}>Timeline</a>
           <a href="#creative" style={navLinkStyle(scrolled, isDark)}>Creative Journey</a>
           <a href="#leadership" style={navLinkStyle(scrolled, isDark)}>Leadership</a>
           <a href="#achievements" style={navLinkStyle(scrolled, isDark)}>Achievements</a>
@@ -143,6 +144,7 @@ export default function Navbar({ onOpenResume, isDark, toggleTheme }) {
           }}
         >
           <a href="#profile" onClick={() => setMobileMenuOpen(false)} style={mobileNavLinkStyle}>Profile</a>
+          <a href="#journey-timeline" onClick={() => setMobileMenuOpen(false)} style={mobileNavLinkStyle}>Timeline</a>
           <a href="#creative" onClick={() => setMobileMenuOpen(false)} style={mobileNavLinkStyle}>Creative Journey</a>
           <a href="#leadership" onClick={() => setMobileMenuOpen(false)} style={mobileNavLinkStyle}>Leadership</a>
           <a href="#achievements" onClick={() => setMobileMenuOpen(false)} style={mobileNavLinkStyle}>Achievements</a>
