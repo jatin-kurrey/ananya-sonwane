@@ -157,7 +157,48 @@ body {
   margin-bottom: 16px;
 }
 
-/* PRINT STYLES: Strict Single Page PDF Output */
+/* Container */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* MOBILE RESPONSIVE MEDIA QUERIES */
+@media (max-width: 768px) {
+  .nav-links-desktop {
+    display: none !important;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .glass-card {
+    border-radius: 16px;
+    padding: 24px 18px !important;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Sheet container responsiveness on mobile */
+  .a4-sheet {
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+}
+
+@media (max-width: 480px) {
+  .a4-sheet {
+    transform: scale(0.72);
+    transform-origin: top center;
+  }
+}
+
+/* PRINT STYLES */
 @media print {
   header, footer, nav, button, .nav-bar, #hero, #profile, #creative, #leadership, #achievements, #qualities {
     display: none !important;
