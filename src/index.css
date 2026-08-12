@@ -1,0 +1,179 @@
+:root {
+  --bg-page: #FAF5F7;
+  --bg-card: rgba(255, 255, 255, 0.88);
+  --bg-card-hover: #FFFFFF;
+  --text-main: #33202C;
+  --text-muted: #5E4756;
+  --text-light: #806877;
+  --accent-plum: #4E2A3F;
+  --accent-pink: #E5BCC6;
+  --accent-pink-soft: #F5E6EC;
+  --accent-pink-dark: #C28295;
+  --border-color: #EBD8E0;
+  --border-glow: rgba(229, 188, 198, 0.5);
+  --shadow-card: 0 10px 30px rgba(78, 42, 63, 0.06);
+  --shadow-hover: 0 20px 40px rgba(78, 42, 63, 0.12);
+  --font-script: 'Caveat', cursive;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg-page: #191217;
+  --bg-card: rgba(36, 25, 33, 0.88);
+  --bg-card-hover: #2E1F29;
+  --text-main: #F7EBF0;
+  --text-muted: #D9C3CE;
+  --text-light: #B399A8;
+  --accent-plum: #F2D0DE;
+  --accent-pink: #7A3D54;
+  --accent-pink-soft: #36222D;
+  --accent-pink-dark: #E09BB0;
+  --border-color: #422B38;
+  --border-glow: rgba(224, 155, 176, 0.3);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-pink-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-plum);
+}
+
+/* Glassmorphism Card Utility */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Button Utilities */
+.btn-primary {
+  background: linear-gradient(135deg, #E5BCC6, #D49EA7);
+  color: #33202C;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(229, 188, 198, 0.4);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(229, 188, 198, 0.6);
+  background: linear-gradient(135deg, #F0CBD5, #E5BCC6);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: var(--accent-pink-soft);
+  border-color: var(--accent-pink);
+  color: var(--accent-plum);
+  transform: translateY(-2px);
+}
+
+/* Section Title Pill */
+.section-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-plum);
+  background: var(--accent-pink-soft);
+  border: 1px solid var(--border-color);
+  padding: 6px 18px;
+  border-radius: 30px;
+  margin-bottom: 16px;
+}
+
+/* PRINT STYLES: Strict Single Page PDF Output */
+@media print {
+  header, footer, nav, button, .nav-bar, #hero, #profile, #creative, #leadership, #achievements, #qualities {
+    display: none !important;
+  }
+
+  html, body {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    overflow: hidden !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+}
